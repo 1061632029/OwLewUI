@@ -9,8 +9,24 @@ OwlewMesureEditDlg::OwlewMesureEditDlg(QWidget *parent)
 OwlewMesureEditDlg::~OwlewMesureEditDlg()
 {}
 
+void OwlewMesureEditDlg::SetRadius(const double& val)
+{
+	ui.led_Angle->setEnabled(false);
+	ui.lab_Dis->setText(QString::fromStdWString(L"°ë¾¶"));
+	QString dis = QString("%1").arg(val, 0, 'f', 3);
+	ui.led_Dis->setText(dis);
+}
+
+double OwlewMesureEditDlg::GetRadius() const
+{
+	auto disVal = ui.led_Dis->text();
+	return disVal.toDouble();
+}
+
 void OwlewMesureEditDlg::SetDis(const double& val)
 {
+	ui.led_Angle->setEnabled(false);
+	ui.lab_Dis->setText(QString::fromStdWString(L"¾àÀë"));
 	QString dis= QString("%1").arg(val, 0, 'f', 3);
 	ui.led_Dis->setText(dis);
 }
@@ -23,6 +39,7 @@ double OwlewMesureEditDlg::GetDis() const
 
 void OwlewMesureEditDlg::SetAngle(const double& val)
 {
+	ui.led_Dis->setEnabled(false);
 	QString dis = QString("%1").arg(val, 0, 'f', 3);
 	ui.led_Angle->setText(dis);
 }

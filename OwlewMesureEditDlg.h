@@ -10,6 +10,8 @@ class OWLEWQ_WIDGETS_EXPORT OwlewMesureEditDlg : public QDialog
 public:
 	OwlewMesureEditDlg(QWidget *parent = nullptr);
 	~OwlewMesureEditDlg();
+	void SetRadius(const double& val);
+	double GetRadius() const;
 	void SetDis(const double& val);
 	double GetDis() const;
 	void SetAngle(const double& val);
