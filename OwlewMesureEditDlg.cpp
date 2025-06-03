@@ -25,6 +25,7 @@ double OwlewMesureEditDlg::GetRadius() const
 
 void OwlewMesureEditDlg::SetDis(const double& val)
 {
+	ui.led_Dis->setEnabled(true);
 	ui.led_Angle->setEnabled(false);
 	ui.lab_Dis->setText(QString::fromStdWString(L"¾àÀë"));
 	QString dis= QString("%1").arg(val, 0, 'f', 3);
@@ -39,6 +40,7 @@ double OwlewMesureEditDlg::GetDis() const
 
 void OwlewMesureEditDlg::SetAngle(const double& val)
 {
+	ui.led_Angle->setEnabled(true);
 	ui.led_Dis->setEnabled(false);
 	QString dis = QString("%1").arg(val, 0, 'f', 3);
 	ui.led_Angle->setText(dis);
